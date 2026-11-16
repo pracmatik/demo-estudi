@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Tres demos · Demostració · Pracmatik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap">
+<script defer src="track.js"></script>
+<style>
+:root{--paper:#F7F5F0;--ink:#111;--ink2:#4a4642;--ink3:#8a847c;--line:#e2ded8;--w:#fff;--obra:#F2541B;--groc:#e9b949}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.env{max-width:860px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Inter Tight',Inter,sans-serif;letter-spacing:-.02em;line-height:1.15;margin:0}
+p{margin:0 0 14px}
+a{color:var(--obra)}
+.cab{background:var(--ink);color:#f3f1ec;padding:56px 0 48px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.03em;color:#f3f1ec;text-decoration:none}
+.logo span{color:var(--obra)}
+.kicker{display:block;margin:26px 0 8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--obra);font-weight:700}
+.cab h1{font-size:clamp(28px,5.2vw,44px);margin-bottom:18px;max-width:760px}
+.cab p{color:#cfcac2;max-width:640px;font-size:17px}
+.boto{display:inline-block;padding:13px 20px;border-radius:999px;background:var(--obra);color:#fff;font-weight:700;text-decoration:none;text-align:center}
+section{padding:50px 0;border-bottom:1px solid var(--line)}
+.demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.demo{background:var(--w);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column}
+.demo .n{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:10px}
+.demo h2{font-size:20px;margin-bottom:10px}
+.demo p{font-size:14.5px;color:var(--ink2);flex:1 1 auto}
+.demo .boto{align-self:flex-start;margin-top:6px}
+.peu{padding:32px 0 50px;font-size:14px;color:var(--ink3)}
+@media (max-width:560px){
+  .cab{padding:40px 0 36px}
+  .cab p{font-size:16px}
+  .demo .boto{align-self:stretch}
+}
+</style>
+</head>
+<body>
+<header class="cab"><div class="env">
+  <a class="logo" href="https://www.pracmatik.com" target="_blank" rel="noopener">pracmatik<span>.</span></a>
+  <span class="kicker">Demostració</span>
+  <h1>Tres coses per provar abans de tornar a parlar</h1>
+  <p>Totes les dades són inventades. Podeu entrar i clicar on vulgueu sense por de trencar res.</p>
+</div></header>
+
+<main>
+<section><div class="env">
+  <div class="demos">
+    <article class="demo">
+      <span class="n">1</span>
+      <h2>Actes de visita d'obra</h2>
+      <p>Un panell amb una obra d'exemple, s'hi entra sense contrasenya. A dins hi ha cada visita amb les seves fotos, les tasques per industrial i l'acta en PDF.</p>
+      <a class="boto" href="https://actas-dashboard.2slval.easypanel.host/demo/" target="_blank" rel="noopener">Obrir les actes</a>
+    </article>
+    <article class="demo">
+      <span class="n">2</span>
+      <h2>Pressupostos des dels amidaments</h2>
+      <p>Pugeu un BC3 o un Excel d'amidaments i surt el pressupost amb els preus de la base. Ho podeu provar amb un fitxer vostre: no surt del vostre ordinador.</p>
+      <a class="boto" href="pressupostos/">Obrir els pressupostos</a>
+    </article>
+    <article class="demo">
+      <span class="n">3</span>
+      <h2>Base de coneixement de l'estudi</h2>
+      <p>Pregunteu com es va fer una cosa en projectes anteriors i mireu de quin document surt la resposta.</p>
+      <a class="boto" href="coneixement/">Obrir la base</a>
+    </article>
+  </div>
+</div></section>
+</main>
+
+<footer class="peu"><div class="env">
+  Albert Grau · Pracmatik · <a href="mailto:albert@pracmatik.com">albert@pracmatik.com</a> · +34 680 613 913 · Demostració amb dades inventades. Aquesta pàgina compta les visites de manera anònima i sense galetes.
+</div></footer>
+</body>
+</html>

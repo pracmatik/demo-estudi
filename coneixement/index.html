@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Base de coneixement de l'estudi · Demostració · Pracmatik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap">
+<script defer src="../track.js"></script>
+<script defer src="dades.js"></script>
+<style>
+:root{--paper:#F7F5F0;--ink:#111;--ink2:#4a4642;--ink3:#8a847c;--line:#e2ded8;--w:#fff;--obra:#F2541B;--groc:#e9b949}
+*{box-sizing:border-box}
+[hidden]{display:none}
+html,body{max-width:100%;overflow-x:hidden}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.env{max-width:860px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Inter Tight',Inter,sans-serif;letter-spacing:-.02em;line-height:1.15;margin:0}
+p{margin:0 0 14px}
+a{color:var(--obra)}
+button,input,select{font:inherit;color:inherit}
+.cab{background:var(--ink);color:#f3f1ec;padding:56px 0 48px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.03em;color:#f3f1ec;text-decoration:none}
+.logo span{color:var(--obra)}
+.kicker{display:block;margin:26px 0 8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--obra);font-weight:700}
+.cab h1{font-size:clamp(28px,5.2vw,44px);margin-bottom:18px;max-width:760px}
+.cab p{color:#cfcac2;max-width:640px;font-size:17px}
+.boto{display:inline-block;padding:13px 20px;border-radius:999px;background:var(--obra);color:#fff;font-weight:700;text-decoration:none;text-align:center;border:0;cursor:pointer;min-height:48px}
+section{padding:50px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
+.on{font-size:13.5px;color:var(--ink3);margin:0}
+.prova{margin-top:14px;padding:12px 14px;border-left:3px solid var(--groc);background:#fbf6e6;border-radius:0 8px 8px 0;font-size:14.5px;color:var(--ink2)}
+.taula{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.caixa{background:var(--w);border:1px solid var(--line);border-radius:12px;padding:20px}
+.caixa h3{font-size:16px;margin-bottom:8px}
+.caixa p{font-size:14.5px;color:var(--ink2);margin:0}
+.caixa.igual h3{color:#1f7a3f}.caixa.simple h3{color:#9a6a00}.caixa.nou h3{color:var(--obra)}.caixa.off h3{color:var(--ink3)}
+.peu{padding:32px 0 50px;font-size:14px;color:var(--ink3)}
+
+/* Consulta */
+.consulta{background:var(--w);border:1px solid var(--line);border-radius:14px;padding:22px}
+.camp{display:flex;gap:10px}
+.camp input{flex:1 1 auto;min-width:0;min-height:48px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;background:var(--w);font-size:16px}
+.camp input:focus{outline:3px solid rgba(242,84,27,.25);outline-offset:1px}
+.suggerides{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.sug{min-height:44px;padding:9px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);font-size:14px;line-height:1.35;text-align:left;cursor:pointer}
+.sug:hover,.sug[aria-pressed=true]{border-color:var(--ink)}
+.sug[aria-pressed=true]{background:var(--ink);color:#fff}
+.resposta{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.resposta[hidden]{display:none}
+.resposta h3{font-size:19px;margin-bottom:12px}
+.resposta .text p{margin:0 0 10px}
+.fonts{margin-top:16px;background:var(--paper);border-radius:10px;padding:14px 16px}
+.fonts b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.fonts ol{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink2)}
+.fonts li{padding:3px 0}
+.fonts .data{color:var(--ink3);white-space:nowrap}
+
+/* Explorar */
+.pestanyes{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pest{min-height:44px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;font-weight:600;cursor:pointer}
+.pest[aria-selected=true]{background:var(--ink);color:#fff}
+.filtres{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px;font-size:14px;color:var(--ink2)}
+.xip{min-height:40px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--w);cursor:pointer;font-size:14px}
+.xip[aria-pressed=true]{border-color:var(--obra);color:var(--obra);font-weight:600}
+.filtres select{min-height:40px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--w);font-size:14px;max-width:100%}
+.compte{margin-left:auto;color:var(--ink3)}
+.graella{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+.fitxa{background:var(--w);border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:box-shadow .4s,border-color .4s;overflow-wrap:anywhere}
+.fitxa h3{font-size:17px;margin-bottom:4px}
+.fitxa .meta{font-size:13.5px;color:var(--ink3);margin-bottom:10px}
+.fitxa p,.fitxa li{font-size:14.5px;color:var(--ink2)}
+.fitxa p{margin:0 0 8px}
+.fitxa ul{margin:0 0 10px;padding-left:18px}
+.fitxa .et{font-weight:600;color:var(--ink)}
+.fitxa.marcat{border-color:var(--obra);box-shadow:0 0 0 3px rgba(242,84,27,.22)}
+.mostra{height:64px;border-radius:8px;margin:-4px 0 14px;border:1px solid rgba(0,0,0,.06)}
+.vell{display:inline-block;margin-left:4px;padding:1px 8px;border-radius:999px;background:var(--groc);color:var(--ink);font-size:12.5px;font-weight:600}
+.criteri .num{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;margin-bottom:8px}
+.buit{color:var(--ink3);font-size:15px}
+.tornar{display:inline-block;margin-top:8px;font-weight:600}
+@media (max-width:560px){
+  .cab{padding:40px 0 36px}
+  .cab p{font-size:16px}
+  .consulta{padding:16px}
+  .camp{flex-direction:column}
+  .camp .boto{width:100%}
+  .compte{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+<header class="cab"><div class="env">
+  <a class="logo" href="https://www.pracmatik.com" target="_blank" rel="noopener">pracmatik<span>.</span></a>
+  <span class="kicker">Demostració</span>
+  <h1>Com ho vam fer l'última vegada</h1>
+  <p>És una mostra amb un estudi inventat, Estudi Exemple. Les respostes estan preparades: aquí no hi ha cap IA connectada.</p>
+  <p>A la versió de veritat respon només amb la documentació del vostre estudi i diu de quin document surt cada resposta.</p>
+</div></header>
+
+<main>
+<section id="consulta"><div class="env">
+  <h2>Pregunteu</h2>
+  <div class="consulta">
+    <form class="camp" id="form" autocomplete="off">
+      <label for="q" class="on" style="position:absolute;left:-9999px">Pregunta</label>
+      <input id="q" type="text" placeholder="Per exemple: dutxa a ras en un bany petit" enterkeyhint="search">
+      <button class="boto" type="submit">Preguntar</button>
+    </form>
+    <div class="suggerides" id="sug"></div>
+    <div class="resposta" id="resposta" hidden aria-live="polite"></div>
+  </div>
+</div></section>
+
+<section id="explorar"><div class="env">
+  <h2>O mireu-ho sense preguntar</h2>
+  <div class="pestanyes" role="tablist" id="pestanyes">
+    <button class="pest" role="tab" data-panell="projectes" aria-selected="true">Projectes</button>
+    <button class="pest" role="tab" data-panell="acabats" aria-selected="false">Acabats i materials</button>
+    <button class="pest" role="tab" data-panell="proveidors" aria-selected="false">Proveïdors i mobiliari</button>
+    <button class="pest" role="tab" data-panell="criteris" aria-selected="false">Criteris de l'estudi</button>
+  </div>
+  <div class="filtres" id="filtres">
+    <span>Tema:</span>
+    <span id="xips" style="display:contents"></span>
+    <select id="selProj" aria-label="Filtrar per projecte"><option value="">Tots els projectes</option></select>
+    <span class="compte" id="compte"></span>
+  </div>
+  <div class="graella" role="tabpanel" id="panell-projectes"></div>
+  <div class="graella" role="tabpanel" id="panell-acabats" hidden></div>
+  <div class="graella" role="tabpanel" id="panell-proveidors" hidden></div>
+  <div class="graella" role="tabpanel" id="panell-criteris" hidden></div>
+</div></section>
+
+<section><div class="env">
+  <h2>Què hi ha de real en aquesta demo</h2>
+  <div class="taula">
+    <div class="caixa igual"><h3>Com seria la de veritat</h3><p>La manera de consultar: escriviu la pregunta com la diríeu a un company. Cada resposta porta a sota els documents d'on surt, i des d'allà podeu obrir el projecte, l'acabat o el proveïdor.</p></div>
+    <div class="caixa simple"><h3>Simplificat</h3><p>Les respostes estan escrites d'abans i aquí no hi ha cap IA: només reconeix les preguntes preparades. L'estudi, els projectes i els proveïdors són inventats.</p></div>
+    <div class="caixa nou"><h3>A mida</h3><p>Es munta amb els projectes i els documents que ens passeu, tal com els teniu. Només respon amb aquesta documentació i no surt a buscar res a fora.</p></div>
+    <div class="caixa off"><h3>Una idea: preus amb data</h3><p>En aquesta mostra cada preu de proveïdor porta la data en què el van donar, i quan té més de sis mesos surt marcat. És un exemple del que s'hi pot afegir.</p></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="peu"><div class="env">
+  Albert Grau · Pracmatik · <a href="mailto:albert@pracmatik.com">albert@pracmatik.com</a> · +34 680 613 913 · Demostració amb dades inventades. Aquesta pàgina compta les visites de manera anònima i sense galetes.
+  <br><a class="tornar" href="../">Tornar a la portada</a>
+</div></footer>
+
+<script defer src="app.js"></script>
+</body>
+</html>
