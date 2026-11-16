@@ -377,6 +377,22 @@ window.DADES = {
         { ref: "v-sanitaris", doc: "Tarifa amb descompte d'estudi", data: "2026-09-22" },
         { ref: "p-santgervasi", doc: "Pressupost de banys", data: "2026-10-01" },
         { ref: "v-aixetes", doc: "Correu amb el proveïdor", data: "2024-12-12" }
+      ] },
+
+    /* Va l'última perquè, en cas d'empat de punts, guanyin les preguntes més concretes de dalt. */
+    { id: "q-acabats", text: "Com hem fet els últims banys i quins acabats hi vam posar?",
+      paraules: ["*acabat", "*material", "*bany", "*lavabo", "fet", "fer", "fem", "resol", "utilitz", "servir", "posa", "ultim", "*acabad", "*bano", "hicimos", "hecho"],
+      resposta: [
+        "Al Pis a Gràcia, del 2025, el bany de 3,2 m² porta rajola feta a mà de color verd a les parets, dutxa d'obra a ras de terra i porta corredissa encastada.",
+        "A l'Habitatge a Pedralbes, del 2025, el bany principal és de marbre blanc de veta grisa, amb el lavabo tallat de la mateixa pedra i aixetes de llautó envellit.",
+        "Al Pis al Born, del 2025, porcellànic gris a terra, mampara fixa de vidre sense perfil, lavabo de 50 cm i inodor suspès.",
+        "El microciment de l'Àtic a Sarrià no el repetim dins la dutxa. Allà ara fem porcellànic o pedra."
+      ],
+      fonts: [
+        { ref: "p-gracia", doc: "Llista d'acabats de la carpeta d'entrega", data: "2025-07-18" },
+        { ref: "p-pedralbes", doc: "Llista d'acabats de la carpeta d'entrega", data: "2025-05-30" },
+        { ref: "p-born", doc: "Plànol del bany, D-03", data: "2025-05-12" },
+        { ref: "c-microciment", doc: "Criteris de l'estudi", data: "2026-01-08" }
       ] }
   ]
 };
